@@ -1,0 +1,16 @@
+
+<app-child (sendDataToParent)="handleDataFromChild($event)"></app-child>
+<h1>{{receivedDataFromChild}}</h1>
+<br><br>
+
+<input type="text" [(ngModel)]="UserName">
+
+<p>{{UserName}}</p>
+
+<ul>
+    <li *ngFor="let item of friendlist">
+      {{item.name}} <br> {{item.age}}
+    </li>
+</ul>
+
+ 

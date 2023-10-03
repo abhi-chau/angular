@@ -1,0 +1,63 @@
+::ng-deep .content {
+    text-align: justify;
+    margin-top: 25px;
+  }
+  
+  ::ng-deep #longtabs {
+    margin-top: 20px;
+  }
+  
+  ::ng-deep #scrolledtabs {
+    margin-top: 20px;
+  }
+  
+
+  ::ng-deep .caption {
+    font-size: 16px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+  }
+  
+  ::ng-deep .left-aligned {
+    text-align: left;
+  }
+  .grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+#space{
+ margin-right: 30px;
+}
+.grid1{
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+/* smart phone */
+@media (min-width: 600px) and (max-width: 1024px) {
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr ;
+        padding-left: 30px;
+    }
+}
+
+@media only screen and (max-width:600px){
+   
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr ;
+        padding-left: 30px;
+    }
+
+}
+
+@media only screen and ( min-width:900px){
+   
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-left: 20px;
+    }
+}

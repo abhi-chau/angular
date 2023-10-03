@@ -1,0 +1,43 @@
+<div class="grid ">
+    <div *ngFor="let item of wings" class="grid1">
+        {{item.Text}}
+        <div *ngIf="item.dataType === 'date'">
+            <dx-date-box id="space">
+            </dx-date-box>
+        </div>
+        <div *ngIf="item.dataType === 'String'">
+            <dx-text-box id="space"></dx-text-box>
+        </div>
+
+        <div *ngIf="item.dataType === 'Number'">
+            <dx-text-box id="space"></dx-text-box>
+        </div>
+
+        <div *ngIf="item.dataType === 'selectbox'">
+            <dx-select-box id="space" [dataSource]="partycode">
+            </dx-select-box>
+        </div>
+
+        <div *ngIf="item.dataType === 'selectbox1'">
+            <dx-select-box id="space" [dataSource]="Branch">
+            </dx-select-box>
+        </div>
+
+        <div *ngIf="item.dataType === 'selectbox2'">
+            <dx-select-box id="space" [dataSource]="PriceList">
+            </dx-select-box>
+        </div>
+
+        <div *ngIf="item.dataType === 'selectbox3'">
+            <dx-select-box id="space" [dataSource]="VatTax">
+            </dx-select-box>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<input [(ngModel)]="data"  type="text">
+
+<br> <br>
+<h2>You entered the data:  {{data}}</h2>

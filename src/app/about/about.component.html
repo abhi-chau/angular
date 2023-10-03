@@ -1,0 +1,32 @@
+<dx-accordion
+#accordion
+[dataSource]="newdata"
+width="50em"
+[collapsible]="false"
+[multiple]="false"
+[animationDuration]="300"
+[selectedItems]="[newdata[0]]"
+id="accordion-container"
+>
+<div *dxTemplate="let data of 'title'" style="height:60px">
+  <h5>{{ data.name }}</h5>
+</div>
+<div *dxTemplate="let data of 'item'">
+  <p>ID: {{ data.id }}</p>
+  <p>UserName: <b>{{data.username}}</b></p>
+  <p>Email: <a href="{{ data.email}}" target="_blank">
+    {{ data.email}}
+  </a> </p>
+  <p>Street: {{ data.address.street }}</p>
+  <p>Suite: {{ data.address.suite }}</p>
+  <p>City: {{ data.address.city }}</p>
+  <p>Zipcode: <b>{{ data.address.zipcode }}</b></p>
+  <p>Phone: <b>{{ data.phone }}</b></p>
+  <p>Website :  <a href="{{ data.website}}" target="_blank">
+    {{ data.website}}
+  </a></p>
+  <p>Company Name: {{ data.company.name }}</p>
+  <p>Catch Phrase: {{ data.company.catchPhrase }}</p>
+  <p>Business: {{ data.company.bs }}</p>
+</div>
+</dx-accordion>

@@ -1,0 +1,39 @@
+<dx-radio-group [items]="pri" [(value)]="selectedColumn" layout="horizontal">
+</dx-radio-group><br>
+
+<span>Search here</span>&nbsp; &nbsp;  &nbsp; &nbsp;
+<div class="divs">
+  <dx-text-box
+    [(ngModel)]="searchText"
+    width="15em"
+    [showClearButton]="true"
+    placeholder="Type...."
+    (blur)="applyFilter()"
+  ></dx-text-box> &nbsp; &nbsp;
+  <dx-button
+    stylingMode="contained"
+    text="Go"
+    type="normal"
+    [width]="120"
+    (click)="applyFilter()"
+  >
+  </dx-button><br><br>
+  <dx-button
+  stylingMode="contained"
+  text="reset"
+  type="normal"
+  [width]="120"
+  (click)="reset()"
+>
+</dx-button>
+</div>
+<br>
+<h3 id="centers">Employee Details</h3>
+<dx-data-grid
+  id="gridContainer"
+  [dataSource]="users"
+  [columnAutoWidth]="true"
+  [columns]="['id','name', 'username', 'email','address.street','address.city','address.zipcode']"
+  [showBorders]="true"
+>
+</dx-data-grid>

@@ -1,0 +1,53 @@
+<div class="login-container">
+  <h2>Login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <!-- Company Name Field -->
+    <div class="form-group">
+      <label for="companyName">Company Name</label>
+      <input
+        id="companyName"
+        formControlName="companyName"
+        type="text"
+        placeholder="Enter your company name"
+        class="form-control"
+      />
+      <div *ngIf="loginForm.get('companyName')?.invalid && loginForm.get('companyName')?.touched">
+        <small class="error-text">Company Name is required.</small>
+      </div>
+    </div>
+
+    <!-- User Name Field -->
+    <div class="form-group">
+      <label for="userName">User Name</label>
+      <input
+        id="userName"
+        formControlName="userName"
+        type="text"
+        placeholder="Enter your user name"
+        class="form-control"
+      />
+      <div *ngIf="loginForm.get('userName')?.invalid && loginForm.get('userName')?.touched">
+        <small class="error-text">User Name is required.</small>
+      </div>
+    </div>
+
+    <!-- Password Field -->
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        id="password"
+        formControlName="password"
+        type="password"
+        placeholder="Enter your password"
+        class="form-control"
+      />
+      <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+        <small class="error-text">Password is required.</small>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit"  class="btn btn-primary">Login</button>
+  </form>
+</div>
+

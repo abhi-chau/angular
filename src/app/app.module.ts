@@ -32,6 +32,8 @@ import { Apiservice } from './app.service';
 import { DxValidatorModule , DxValidationSummaryModule, } from 'devextreme-angular';
 import { DxListModule} from 'devextreme-angular';
 import { DxRadioGroupModule, } from 'devextreme-angular';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { CrudPageComponent } from './crud-page/crud-page.component';
 
 
 
@@ -42,12 +44,14 @@ const routes: Routes = [
   { path: 'menu', component: MenuComponent },
   { path: 'formdemo', component: FormdemoComponent },
   { path: 'tab', component: TabComponent },
+  { path: 'login', component: LoginFormComponent },
+  { path: 'crud', component:CrudPageComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirect to home by default
 ];
 
 
 @NgModule({
-  declarations: [
+  declarations: [		
     AppComponent,
     NavbarComponent,
     AboutComponent,
@@ -58,9 +62,9 @@ const routes: Routes = [
     ParentComponent,
     ChildComponent,
     TabComponent,
-  
-  
-  ],
+    LoginFormComponent,
+    CrudPageComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,

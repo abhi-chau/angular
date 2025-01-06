@@ -1,29 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { DxButtonModule, DxValidatorComponent } from 'devextreme-angular';
-import { AboutComponent } from './about/about.component';
-import { HomeComponent } from './home/home.component';
-import { MenuComponent } from './menu/menu.component';
-import { SectionComponent } from './section/section.component';
+import { DxButtonModule} from 'devextreme-angular';
 import { DxNumberBoxModule } from 'devextreme-angular';
 import { DxPopupModule,DxTemplateModule } from 'devextreme-angular';
 import { DxFormModule } from 'devextreme-angular';
-import { FormdemoComponent } from './formdemo/formdemo.component';
 import { HttpClientModule } from  '@angular/common/http';
-
 import { DxDateBoxModule } from 'devextreme-angular';
 import { DxSelectBoxModule } from 'devextreme-angular';
 import { DxCalendarModule, DxTextAreaModule } from "devextreme-angular";
 import { DxTextBoxModule } from 'devextreme-angular';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ParentComponent } from './parent/parent.component';
-import { ChildComponent } from './child/child.component';
-import { TabComponent } from './tab/tab.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DxTabsModule, } from 'devextreme-angular';
 import { DxDataGridModule } from 'devextreme-angular';
 import { DxTabPanelModule } from 'devextreme-angular';
@@ -35,33 +25,16 @@ import { DxRadioGroupModule, } from 'devextreme-angular';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { CrudPageComponent } from './crud-page/crud-page.component';
 
-
-
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'section', component: SectionComponent },
-  { path: 'menu', component: MenuComponent },
-  { path: 'formdemo', component: FormdemoComponent },
-  { path: 'tab', component: TabComponent },
   { path: 'login', component: LoginFormComponent },
   { path: 'crud', component:CrudPageComponent},
-  { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirect to home by default
+  { path: '', redirectTo: '/home', pathMatch: 'full' }, 
 ];
-
 
 @NgModule({
   declarations: [		
     AppComponent,
     NavbarComponent,
-    AboutComponent,
-    HomeComponent,
-    MenuComponent,
-    SectionComponent,
-    FormdemoComponent,
-    ParentComponent,
-    ChildComponent,
-    TabComponent,
     LoginFormComponent,
     CrudPageComponent
    ],

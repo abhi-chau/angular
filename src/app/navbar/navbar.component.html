@@ -8,64 +8,9 @@
         <a id="nav-toggle" href="#!"><span></span></a>
       </div>
       <ul class="nav-list">
-        <li><a routerLink="/home">Home</a></li>
-        <li><a routerLink="/about">About</a></li>
-        <li><a routerLink="/section">Section</a></li>
-        <li><a routerLink="/menu">Menu</a></li>
-        <li><a routerLink="/formdemo">Form</a></li>
-        <li><a routerLink="/tab">Tab</a></li>
         <li><a routerLink="/login">Login</a></li>
         <li><a routerLink="/curd">curd</a></li>
       </ul>
     </nav>
   </div>
 </section>
-
-<hr>
-
-<dx-button
-text="Show Popup"
-type="default"
-[width]="300"
-(onClick)="showPopup()"
->
-</dx-button>
-<hr>
-
-<dx-popup
-  [width]="560"
-  [height]="320"
-  [hideOnOutsideClick]="true"
-  [showCloseButton]="true"
-  [(visible)]="popupVisible"
-  title="This is my First Popup"
->
-  <div *dxTemplate="let data of 'content'">
-    <div>
-      <div class="caption">Description</div>
-      In the heart of LA's business district, the Downtown Inn has a welcoming
-      staff and award winning restaurants that remain open 24 hours a day. Use
-      our conference room facilities to conduct meetings and have a drink at our
-      beautiful rooftop bar.
-      <br /><br />
-      <div class="content">
-        <div>
-          <div class="caption">Features</div>
-          <div>Concierge</div>
-          <div>Restaurant</div>
-          <div>Valet Parking</div>
-          <div>Fitness Center</div>
-          <div>Sauna</div>
-          <div>Airport Shuttle</div>
-        </div>
-        <div>
-          <div class="caption">Rooms</div>
-          <div>Climate control</div>
-          <div>Air conditioning</div>
-          <div>Coffee/tea maker</div>
-          <div>Iron/ironing</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</dx-popup>

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormService } from '../form.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,23 +6,8 @@ import { FormService } from '../form.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  popupVisible = false;
-  bookButtonOptions: any;
+  constructor(){}
 
-  showPopup() {
-    this.popupVisible = true;
-  }
-  constructor(private form:FormService){
-    this.bookButtonOptions = {
-      width: 300,
-      text: 'Book',
-      type: 'default',
-      stylingMode: 'contained',
-      onClick: () => {
-        this.popupVisible = false;
-      },
-    };
-  }
   };
   
   

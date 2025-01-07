@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -25,12 +24,6 @@ import { DxRadioGroupModule, } from 'devextreme-angular';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { CrudPageComponent } from './crud-page/crud-page.component';
 
-const routes: Routes = [
-  { path: 'login', component: LoginFormComponent },
-  { path: 'crud', component:CrudPageComponent},
-  { path: '', redirectTo: '/home', pathMatch: 'full' }, 
-];
-
 @NgModule({
   declarations: [		
     AppComponent,
@@ -43,11 +36,9 @@ const routes: Routes = [
     AppRoutingModule,
     DxButtonModule,
     DxNumberBoxModule,
-    RouterModule.forRoot(routes),
     DxPopupModule,
     ReactiveFormsModule,
     FormsModule,
-  
     DxTemplateModule,
     DxFormModule,
     DxDateBoxModule,

@@ -1,48 +1,85 @@
+/* Login Form Container */
 .login-container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background: #f9f9f9;
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-align: center;
+}
+
+/* Heading */
+.login-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+/* Label */
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Input Fields */
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* Error Text */
+.error-text {
+  font-size: 12px;
+  color: #e74c3c;
+  margin-top: 5px;
+}
+
+/* Submit Button */
+.btn {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .login-container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 15px;
   }
-  
-  .login-container h2 {
-    text-align: center;
-  }
-  
-  .login-container form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .login-container form div {
-    margin-bottom: 15px;
-  }
-  
-  .login-container form label {
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  .login-container form input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    width: 100%;
-  }
-  
-  .login-container form button {
-    padding: 10px;
-    border: none;
-    border-radius: 3px;
-    background-color: #28a745;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .login-container form button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
+}

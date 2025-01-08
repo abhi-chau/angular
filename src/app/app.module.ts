@@ -23,13 +23,17 @@ import { DxListModule} from 'devextreme-angular';
 import { DxRadioGroupModule, } from 'devextreme-angular';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { CrudPageComponent } from './crud-page/crud-page.component';
+import { AdminPageComponent } from './adminPage/adminPage.component';
+import { UserPageComponent } from './userPage/userPage.component';
 
 @NgModule({
-  declarations: [		
+  declarations: [				
     AppComponent,
     NavbarComponent,
     LoginFormComponent,
-    CrudPageComponent
+    CrudPageComponent,
+    AdminPageComponent,
+    UserPageComponent
    ],
   imports: [
     BrowserModule,

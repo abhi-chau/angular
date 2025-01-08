@@ -12,7 +12,6 @@ export class LoginFormComponent implements OnInit {
 
   constructor(private fb:FormBuilder) { 
     this.loginForm = this.fb.group({
-      companyName: ['', Validators.required],
       userName:['', Validators.required],
       password:['',Validators.required]
     })
@@ -23,11 +22,12 @@ export class LoginFormComponent implements OnInit {
 
   onSubmit(): void {
     if (this.loginForm.valid) {
-      const loginData = this.loginForm.value; // Get form values
-      localStorage.setItem('loginData', JSON.stringify(loginData)); // Save to localStorage
-      alert('Login Data Saved Successfully!');
+      const { userName, password } = this.loginForm.value;
+      console.log('User Name:', userName);
+      console.log('Password:', password);
+      // Implement your authentication logic here
     } else {
-      alert('Please fill out all required fields.');
+      console.log('Form is invalid');
     }
   }
 

@@ -1,3 +1,36 @@
-<p>
-  crud-page works!
-</p>
+<div>
+  <h2>Product List</h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.id }}</td>
+        <td>{{ product.title }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.description }}</td>
+        <td>
+          <button (click)="viewProduct(product.id)">View</button>
+          <!-- <button (click)="editProduct(product)">Edit</button> -->
+          <!-- <button (click)="deleteProduct(product.id)">Delete</button> --> 
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="selectedProduct">
+    <h2>Product Details</h2>
+    <p>ID : {{selectedProduct.id}}</p>
+    <p>Title : {{selectedProduct.title}}</p>
+    <p>Price : {{selectedProduct.price}}</p>
+    <p>Description : {{selectedProduct.description}}</p>
+    <button (click)="selectedProduct = null">Close</button>
+  </div>
+</div>

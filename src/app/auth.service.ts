@@ -11,11 +11,11 @@ export class AuthService {
   constructor() { }
 
   login(userName:string, password:string){
-    if(userName === "admin" && password === "password"){
+    if(userName === "admin" && password === "admin@123"){
       this.loggedIn = true;
       this.userRole = "admin";
       return true;
-    } else if(userName === "user" && password === "password"){
+    } else if(userName === "user" && password === "user@123"){
       this.loggedIn  = true;
       this.userRole = "user";
       return true;

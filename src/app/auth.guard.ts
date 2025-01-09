@@ -20,10 +20,11 @@ export class AuthGuard  {
        return false;
       }
       return true;
+    } else{
+      alert('Please log in!');
+      this.router.navigate(['/login']); 
+      return false;
     }
-    alert('Please log in!');
-    this.router.navigate(['/login']); 
-    return false;
   };
 
 }

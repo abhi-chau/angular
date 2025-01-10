@@ -62,7 +62,8 @@ import { UserPageComponent } from './userPage/userPage.component';
     DxValidatorModule,
     DxValidationSummaryModule,
     DxListModule,
-    DxRadioGroupModule
+    DxRadioGroupModule,
+    
   ],
   providers: [Apiservice],
   bootstrap: [ AppComponent ]

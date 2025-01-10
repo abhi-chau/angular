@@ -1,29 +1,37 @@
 <div>
   <h2>Product List</h2>
-  <table border="1">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Title</th>
-        <th>Price</th>
-        <th>Description</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let product of products">
-        <td>{{ product.id }}</td>
-        <td>{{ product.title }}</td>
-        <td>{{ product.price }}</td>
-        <td>{{ product.description }}</td>
-        <td>
-          <button (click)="viewProduct(product.id)">View</button>
-          <!-- <button (click)="editProduct(product)">Edit</button> -->
-          <!-- <button (click)="deleteProduct(product.id)">Delete</button> --> 
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="product-grid">
+    <!-- <mat-card *ngFor="let product of products" class="product-card">
+      <img mat-card-image [src]="product.image" alt="{{ product.title }}" />
+      <mat-card-header>
+        <mat-card-title>{{ product.title }}</mat-card-title>
+        <mat-card-subtitle>Price: {{ product.price | currency }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ product.description }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="primary" (click)="viewProduct(product.id)">View</button>
+        <button mat-button color="accent" (click)="editProduct(product)">Edit</button>
+        <button mat-button color="warn" (click)="deleteProduct(product.id)">Delete</button>
+      </mat-card-actions>
+    </mat-card> -->
+  </div>
+  <h2 *ngIf="isEditing">Edit Product</h2>
+  <h2 *ngIf="!isEditing">Add Product</h2>
+  <form (ngSubmit)="isEditing ? updateProduct(newProduct.id) : addProduct()">
+    <label>Title:</label>
+    <input [(ngModel)]="newProduct.title" name="title" required />
+    <br />
+    <label>Price:</label>
+    <input [(ngModel)]="newProduct.price" name="price" type="number" required />
+    <br />
+    <label>Description:</label>
+    <textarea [(ngModel)]="newProduct.description" name="description" required></textarea>
+    <br />
+    <button type="submit">{{ isEditing ? 'Update' : 'Add' }}</button>
+    <button type="button" (click)="isEditing = false; newProduct = {id:0, title: '', price: 0, description: '' }">Cancel</button>
+  </form>
 
   <div *ngIf="selectedProduct">
     <h2>Product Details</h2>

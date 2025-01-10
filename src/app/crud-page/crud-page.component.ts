@@ -10,7 +10,8 @@ export class CrudPageComponent implements OnInit {
 
   products:any[] = [];
   selectedProduct:any = null;
-  newProduct:any;
+  newProduct= {id: 0,title: "" , price: 0, description: ""};
+  isEditing = false;
 
   constructor(private serverservice:DataService) { }
 
@@ -21,25 +22,40 @@ export class CrudPageComponent implements OnInit {
   getProductdata(){
     this.serverservice.getProduct().subscribe((data)=>{
       this.products = data;
-      console.log("this.products",this.products)
     })
   }
 
   viewProduct(productId:number){
    this.serverservice.getProductById(productId).subscribe((product)=>{
     this.selectedProduct = product
-    console.log("this.products",this.selectedProduct)
    })
   }
 
-  // editProduct(product:any){
-  //   this.serverservice.updateProduct(product).subscribe((product)=>{
+  addProduct(){
+    this.serverservice.createProduct(this.newProduct).subscribe((product)=>{
+      this.products.push(product);
+      this.newProduct = {id: 0,title: "" , price: 0, description: ""};
+    })
+  }
 
-  //   })
-  // }
+  editProduct(product:any){
+    this.isEditing = true;
+    this.newProduct = {...product};
+  }
 
-  deleteProduct(){
+  updateProduct(productId:number){
+    this.serverservice.updateProduct(productId , this.newProduct).subscribe((updatedProduct)=>{
+      const index = this.products.findIndex((p)=>{p.id === productId});
+      this.products[index] = updatedProduct;
+      this.isEditing = false;
+      this.newProduct = {id: 0, title: '', price: 0, description: '' }; 
+    })
+  }
 
+  deleteProduct(productId:number){
+    this.serverservice.deleteProduct(productId).subscribe(()=>{
+      this.products = this.products.filter((p)=>{p.id !== productId})
+    })
   }
 
 }

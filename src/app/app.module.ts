@@ -25,6 +25,8 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { CrudPageComponent } from './crud-page/crud-page.component';
 import { AdminPageComponent } from './adminPage/adminPage.component';
 import { UserPageComponent } from './userPage/userPage.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [				
@@ -63,7 +65,8 @@ import { UserPageComponent } from './userPage/userPage.component';
     DxValidationSummaryModule,
     DxListModule,
     DxRadioGroupModule,
-    
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [Apiservice],
   bootstrap: [ AppComponent ]
